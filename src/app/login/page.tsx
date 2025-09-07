@@ -36,7 +36,7 @@ export default function page() {
             const response = await axios.post('/api/users/login', user)
             console.log(response.data)
             toast.success(response.data.message)
-            router.push(`/profile/1`)
+            router.push(`/profile`)
         }
         catch (error: any) {
             console.log(error.message)

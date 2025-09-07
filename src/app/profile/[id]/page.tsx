@@ -1,13 +1,14 @@
-"use client"
-import { useParams } from 'next/navigation'
 import React from 'react'
 
-export default function page() {
+interface paramsId {
+    id : string
+}
 
-    const { id } = useParams()
-    return (
-        <div className='flex justify-center items-center h-screen w-full text-white bg-black'>
-            profile {id}
-        </div>
-    )
+export default function page({params} : {params : paramsId}) {
+  return (
+    <div className='bg-black w-full h-screen flex flex-col justify-center items-center'>
+      <h1 className='text-neutral-300 text-2xl font-semibold text-shadow-2xs'>Profile</h1>
+      <span className='bg-neutral-400 rounded p-2 text-black text-2xl shadow-sm shadow-neutral-100'>{params.id}</span>
+    </div>
+  )
 }
